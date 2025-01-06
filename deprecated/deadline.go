@@ -13,12 +13,12 @@ var (
 	t    time.Time
 )
 
-func Setoff(t time.Time) {
-	if t.Before(time.Now()) {
+func Setoff(tt time.Time) {
+	if tt.Before(time.Now()) {
 		panic("time is in the past")
 	}
 	once.Do(func() {
-		t = t
+		t = tt
 	})
 }
 
